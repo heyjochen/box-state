@@ -1,17 +1,11 @@
 import React from "react";
 
-const Box = ({ on }) => {
-  const [isOn, setIsOn] = React.useState(on);
-
-  const onOrOff = () => {
-    setIsOn((prev) => !prev);
-  };
-
+const Box = ({ on, toggle, id }) => {
   const styles = {
-    backgroundColor: isOn ? "#222222" : "#e2e2e2",
+    backgroundColor: on ? "#222222" : "#e2e2e2",
   };
 
-  return <div className="box" onClick={onOrOff} style={styles}></div>;
+  return <div className="box" style={styles} onClick={() => toggle(id)}></div>;
 };
 
 export default Box;
